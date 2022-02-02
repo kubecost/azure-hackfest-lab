@@ -48,11 +48,11 @@ You can expose the Kubecost UI dashboards locally using Port Forwarding.
 
 2. In your browser, open `localhost:9090` to see the data. It should look like this:
 
-image
+<img src="step2_1.png" alt="Kubecost UI screenshot" width="800px"/>
 
 3. The Kubecost API depends on its bundled Prometheus installation. Verify that the Kubecost API is in full force. **Settings** -> **Prometheus Status**.
 
-image
+<img src="step2_2.png" alt="Prometheus status screenshot" width="500px"/>
 
 ## (optional) Step 3: Expose Kubecost UI deployment outside of the cluster
 
