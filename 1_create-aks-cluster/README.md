@@ -41,8 +41,7 @@ CLI version of these docs is also available from a [previous lab](https://github
 
 Here is what the configuration should look like.
 
-image
-
+<img src="step1.png" alt="AKS config screenshot" width="500px"/>
 
 ## Step 2: Configure `kubectl` access to the cluster
 
