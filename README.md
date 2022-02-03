@@ -1,7 +1,7 @@
 =======
 # Kubecost Workshop at AKS
 
-[Kubecost](https://kubecost.com) provides real-time cost visibility and insights for teams using Kubernetes.
+[Kubecost](https://www.kubecost.com/) provides real-time cost visibility and insights for teams using Kubernetes.
 
 Installing Kubecost on a single cluster or a fleet of clusters uncovers patterns that create overspending on infrastructure and helps teams prioritize where to focus optimization efforts. By identifying root causes for negative patterns, customers using Kubecost save up to 80% of their Kubernetes cloud infrastructure costs. Today, Kubecost empowers thousands of teams across companies of all sizes to monitor and reduce costs, while balancing cost, performance, and reliability.
 
@@ -16,7 +16,7 @@ The workshop walks you through the all the steps required to leverage Kubecost o
 ##  Who is the workshop for?
 
 - Developers
-- Solutions Architechts
+- Solutions Architects
 - DevOps Engineers
 - SREs
 - Infrastructure & Cloud Engineers
@@ -45,4 +45,4 @@ At the end of completing them, you should be able to:
 
 ## Documentation & Support
 
-Official Kubecost documentation is available (here)[https://guides.kubecost.com]. We'd also like to invite you to [join our Slack community](https://join.slack.com/t/kubecost/shared_invite/enQtNTA2MjQ1NDUyODE5LWFjYzIzNWE4MDkzMmUyZGU4NjkwMzMyMjIyM2E0NGNmYjExZjBiNjk1YzY5ZDI0ZTNhZDg4NjlkMGRkYzFlZTU) — for additional support, feature discussions, and general banter!
+Official Kubecost documentation is available (here)[https://guide.kubecost.com]. We'd also like to invite you to [join our Slack community](https://join.slack.com/t/kubecost/shared_invite/enQtNTA2MjQ1NDUyODE5LWFjYzIzNWE4MDkzMmUyZGU4NjkwMzMyMjIyM2E0NGNmYjExZjBiNjk1YzY5ZDI0ZTNhZDg4NjlkMGRkYzFlZTU) — for additional support, feature discussions, and general banter!

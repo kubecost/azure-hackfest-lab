@@ -1,15 +1,23 @@
-# azure-hackfest-lab
-Kubecost workshop for the Azure Hackfest event 
-
-## Pre-Requisites
+# Section 0: Lab Prerequisites
 
 Kubecost has the ability to ingest the Azure Cost Export to ensure that the costs we use are reflective of any Reserved Instances or Enterprise Discounts you have.
 
-Due to the scheduled nature of the Cost Exports being published, they should be configured ahead of the lab.
+Due to the delayed nature of the Cost Exports being published, they should be configured at least 24 hours ahead of the lab.
 
-For this lab, we recommend creating a export with the scope of the subscription that will contain your AKS cluster. Additionally, make sure the storage account is in the same subscription. You may want to consider creating everything under a single resource group to allow easy cleanup.
+For this lab, we recommend creating a export with the scope of the subscription that will contain your AKS cluster. Additionally, make sure the storage account is in the same subscription. You may want to consider creating everything under a single resource group to allow for easier cleanup.
 
-### Steps via Azure Portal:
+## Prerequisites
+
+- You have signed into the [Azure Portal](https://portal.azure.com/)
+- You have access to Azure Cost Management to create a Cost Export
+
+## Step 1: Create Cost Export
+
+Choose your method for creating the Cost Export:
+- [Azure Portal](#via-azure-portal)
+- [Azure CLI](#via-az-cli)
+
+### Via Azure Portal:
 
 1. Login to [Azure Portal](https://portal.azure.com).
 1. Select "Cost Management" from the home page or search box.
@@ -27,32 +35,44 @@ For this lab, we recommend creating a export with the scope of the subscription 
     1. Take note of the Storage Account and Container Name.
 1. Tag the storage account with the following name and value: `kubernetes_namespace:kubecost`
 
-### Steps via az cli:
+### Via az cli:
+
+The following commands assume the creation of a storage account, adjust accordingly if you wish to use an existing one.
+
+Be sure to replace `{location}`, `{subscription id}`, and `{storage account name}` with the respective values for your environment.
+Note that the `{storage account name}` needs to be globally unique across all Azure Storage Accounts. We recommend using something like `kubecost{random_number}`
+
 
 ```shell
-location=eastus
-subscriptionId=0bd50fdf-c923-4e1e-850c-196dd3dcc5d3
-resourceGroupName=spomkccost
-storageAccountName=spomsakccost
+# Define Runtime Variables
+location={location}
+subscriptionId={subscription id}
+resourceGroupName=kubecost
+storageAccountName={storage account name}
 storageContainerName=costexport
 storageDirectoryName=cur
-costExportName=kccem2damor
+costExportName=kubecost
 
+# Create Resource Group
 az group create \
   --location ${location} \
   --name ${resourceGroupName}
 
+#Create Storage Account and Tag
 az storage account create \
   --name ${storageAccountName} \
   --resource-group ${resourceGroupName} \
   --location ${location} \
   --sku Standard_LRS \
-  --kind StorageV2
+  --kind StorageV2 \
+  --tags kubernetes_namespace=kubecost
 
+# Create Storage Container
 az storage container create \
   --name ${storageContainerName} \
   --account-name ${storageAccountName}
 
+# Create Cost Export
 export_start=$(date +"%Y-%m-%dT%H:%M:%S")
 az costmanagement export create \
   --name ${costExportName} \
@@ -65,5 +85,16 @@ az costmanagement export create \
   --storage-directory ${storageDirectoryName} \
   --type AmortizedCost \
   --schedule-status "Active"
-
 ```
+
+## Step 2: Verify Cost Export
+
+Allow 24 hours for the export to be created and validate that you see data being populated.
+Within the Storage Account, there should be files in a similar path to: `costexport / cur / kubecost / 20220201-20220228`
+
+We will also need an access key during the lab to connect to the storage account.
+You can grab it now and save it in a safe place or during the lab exercise.
+
+## Kubecost Documentation
+
+For additional details, reference the Kubecost Documentation [here](https://guide.kubecost.com/hc/en-us/articles/4407595936023-Adding-Azure-Out-of-Cluster-Cluster-Costs-into-Kubecost).
