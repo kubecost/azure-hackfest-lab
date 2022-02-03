@@ -1,4 +1,4 @@
-# Section 1: creating an AKS cluster
+# Module 1: Creating an AKS cluster
 
 In this section, we'll be using the Azure Portal to create an Azure Kubernetes Service (AKS) cluster, configure `kubectl` access to it, and deploy a sample application.
 
@@ -10,7 +10,7 @@ CLI version of these docs is also available from a [previous lab](https://github
 
 - You have signed into the [Azure Portal](https://portal.azure.com/)
 - You have the access permissions required to create and manage K8s clusters in your organization
-- You have set up cost data
+- [You have set up cost data](0_create-azure-cost-export/README.md)
 - You have installed [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
 - You have installed [kubectl](https://kubernetes.io/docs/tasks/tools/)
 
@@ -25,17 +25,17 @@ CLI version of these docs is also available from a [previous lab](https://github
         - Select an Azure Subscription.
         - Select or create an Azure Resource group, such as myResourceGroup.
     - Cluster details:
-        - Choose the **Standard ($$)** preset configutation.
+        - Choose the **Standard ($$)** preset configuration.
         - Enter a Kubernetes cluster name, such as `kubecost-demo-cluster`.
         - Select a **Region**.
-        - Select a Kubernetes version for the AKS cluster. At the time of writing this document, the version used is `1.21.7` (deafult).
+        - Select a Kubernetes version for the AKS cluster. At the time of writing this document, the version used is `1.21.7` (default).
     - Primary node pool:
         - Leave the default values selected.
 
     ### Networking
 
     - Select **Kubenet**, and leave the **DNS name prefix** unchanged.
-    - (optional) Enable HTTP aplication routing. This step is required if you intend to expose the Kubecost UI dashboard via a Load Balancer.
+    - (optional) Enable HTTP application routing. This step is required if you intend to expose the Kubecost UI dashboard via a Load Balancer.
 
 3. Go to **Review + create** tab and click **Create**
 
@@ -74,7 +74,7 @@ aks-agentpool-28582544-vmss000000   Ready    agent   15m   v1.21.7
 aks-agentpool-28582544-vmss000002   Ready    agent   15m   v1.21.7
 ```
 
-## Step 3: deploy a sample application
+## Step 3: Deploy a sample application
 
 This step is optional. For the sake of this demo, we'll deploy a small [nginx server](https://k8s.io/examples/application/deployment.yaml ) so that we can explore more cost data using Kubecost in the next section of this lab.
 

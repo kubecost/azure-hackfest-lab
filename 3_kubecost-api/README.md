@@ -1,4 +1,4 @@
-# Extra Credit: Use the Kubecost API
+# Module 3 (Extra Credit): Using the Kubecost API
 
 Kubecost offers a number of API endpoints to query cost metrics data. The Kubecost API is especially useful in cases where you want to integrate Kubecost data with your existing services, trigger alerts, or set up automation pipelines.
 
@@ -21,7 +21,7 @@ $ kubectl port-forward --namespace kubecost deployment/kubecost-cost-analyzer 90
 
 Here are some examples of data available in the Free Tier of the API:
 
-### [`/alocation`](https://github.com/kubecost/docs/blob/master/allocation.md)
+### [`/allocation`](https://github.com/kubecost/docs/blob/main/allocation.md)
 
 The Kubecost Allocation API is used by the Kubecost Allocation frontend and retrieves cost allocation information for any Kubernetes concept, e.g. cost by namespace, label, deployment, service, and more. This API is directly integrated with the Kubecost ETL caching layer and CSV pipeline so it can scale to large clusters.
 
@@ -38,7 +38,7 @@ $ curl http://localhost:9090/model/allocation \
 
 Note: querying for "3d" will likely return a range of four sets because the queried range will overlap with four precomputed 24-hour sets, each aligned to the configured timezone.
 
-### [`/assets`](https://github.com/kubecost/docs/blob/master/assets.md)
+### [`/assets`](https://github.com/kubecost/docs/blob/main/assets.md)
 
 Assets API retrieves the backing cost data broken down by individual assets, e.g. node, disk, etc, and provides various aggregations of this data. Optionally provides the ability to integrate with external cloud assets.
 
