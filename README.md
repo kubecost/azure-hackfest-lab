@@ -27,7 +27,7 @@ The workshop is organized into 4 modules:
 
 - Module 0: [Creating an Azure Cost Export](0_create-azure-cost-export/README.md)
 - Module 1: [Creating an AKS cluster](1_create-aks-cluster/README.md)
-- Module 2: [Installing Kubecost](2_install-kubecost-on-aks/README.md)
+- Module 2: [Installing Kubecost on AKS](2_install-kubecost-on-aks/README.md)
 - Module 3: [Using the Kubecost API](3_kubecost-api/README.md)
 
 At the end of completing them, you should be able to:

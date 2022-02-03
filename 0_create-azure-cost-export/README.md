@@ -1,4 +1,4 @@
-# Section 0: Lab Prerequisites
+# Module 0: Creating an Azure Cost Export
 
 Kubecost has the ability to ingest the Azure Cost Export to ensure that the costs we use are reflective of any Reserved Instances or Enterprise Discounts you have.
 

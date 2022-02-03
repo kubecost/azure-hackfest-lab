@@ -1,4 +1,4 @@
-# Section 2: Install Kubecost on AKS
+# Module 2: Install Kubecost on AKS
 
 This section helps you install Kubecost on the cluster you've successfully created in Section 1. Optionally, you'll also expose your Kubecost UI via a Load Balancer.
 

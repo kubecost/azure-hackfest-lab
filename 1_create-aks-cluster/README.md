@@ -1,4 +1,4 @@
-# Section 1: creating an AKS cluster
+# Module 1: Creating an AKS cluster
 
 In this section, we'll be using the Azure Portal to create an Azure Kubernetes Service (AKS) cluster, configure `kubectl` access to it, and deploy a sample application.
 

@@ -1,4 +1,4 @@
-# Extra Credit: Use the Kubecost API
+# Module 3 (Extra Credit): Using the Kubecost API
 
 Kubecost offers a number of API endpoints to query cost metrics data. The Kubecost API is especially useful in cases where you want to integrate Kubecost data with your existing services, trigger alerts, or set up automation pipelines.
 
