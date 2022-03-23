@@ -1,5 +1,4 @@
-=======
-# Kubecost Workshop at AKS
+# Kubecost Workshop at [Azure Kubernetes Hackfest](https://github.com/Azure/kubernetes-hackfest/tree/master/labs/monitoring-logging/kubecost)
 
 [Kubecost](https://www.kubecost.com/) provides real-time cost visibility and insights for teams using Kubernetes.
 
@@ -45,4 +44,4 @@ At the end of completing them, you should be able to:
 
 ## Documentation & Support
 
-Official Kubecost documentation is available (here)[https://guide.kubecost.com]. We'd also like to invite you to [join our Slack community](https://join.slack.com/t/kubecost/shared_invite/enQtNTA2MjQ1NDUyODE5LWFjYzIzNWE4MDkzMmUyZGU4NjkwMzMyMjIyM2E0NGNmYjExZjBiNjk1YzY5ZDI0ZTNhZDg4NjlkMGRkYzFlZTU) — for additional support, feature discussions, and general banter!
+Official Kubecost documentation is available [here](https://guide.kubecost.com). We'd also like to invite you to [join our Slack community](https://join.slack.com/t/kubecost/shared_invite/enQtNTA2MjQ1NDUyODE5LWFjYzIzNWE4MDkzMmUyZGU4NjkwMzMyMjIyM2E0NGNmYjExZjBiNjk1YzY5ZDI0ZTNhZDg4NjlkMGRkYzFlZTU) — for additional support, feature discussions, and general banter!
