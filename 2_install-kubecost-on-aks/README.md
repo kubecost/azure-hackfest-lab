@@ -69,8 +69,8 @@ One of the available options to open your Kubecost deployment to the world is by
         type: LoadBalancer
         ports:
         - port: 9090
-    selector:
-        app: cost-analyzer
+        selector:
+            app: cost-analyzer
     ```
     The `app` should be the service name of the Kubecost app minus the `kubecost-` prefic. You can view your services by running `kubectl get services -n kubecost`.
 
